@@ -1,0 +1,35 @@
+{
+  "name": "prisma-pets",
+  "version": "1.0.0",
+  "description": "CRUD com BD",
+  "main": "server.js",
+  "type": "module",
+  "prisma": {
+    "seed": "nodemon prisma/seed.js"
+  }, 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "studio": "npx prisma studio",
+    "seed": "nodemon prisma/seed.js"
+  },
+
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoAlvess/prisma-pets.git"
+  },
+  "keywords": ["GetAll e ByID"],
+  "author": "Gustavo Alves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GustavoAlvess/prisma-pets/issues"
+  },
+  "homepage": "https://github.com/GustavoAlvess/prisma-pets#readme",
+  "dependencies": {
+    "@prisma/client": "^6.17.1",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.17.1"
+  }
+}
