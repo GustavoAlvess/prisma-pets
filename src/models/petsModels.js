@@ -18,3 +18,35 @@ export const findById = async (id) => {
         where: { id: Number(id) }
     });
 }
+
+// Crio a variavel  create e ja exporto
+export const create = async (data) => {
+    return await prisma.pet.create({
+        data: {
+            nome: data.nome,
+            especie: data.especie,
+            dono: data.dono,
+            idade: data.idade
+        }
+    })
+}
+
+//Crio variavel deletePet e ja exporto
+export const deletePet = async (id) => {
+    return await prisma.pet.delete({
+        where: { id: Number (id)}
+    })
+}
+
+// Crio a variavel update e ja exporto
+export const update = async (id, data) => {
+    return await prisma.pet.update({
+        where: { id: Number(id)},
+        data: {
+            ...(data.nome && { nome: data.nome}),
+            ...(data.especie && { especie: data.especie}),
+            ...(data.dono && { dono: data.dono}),
+            ...(data.idade && { idade: Number (data.idade)}),
+        }
+    })
+}
